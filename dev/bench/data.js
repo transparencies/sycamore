@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1632418193649,
-  "repoUrl": "https://github.com/sycamore-rs/sycamore",
+  "lastUpdate": 1709601503660,
+  "repoUrl": "https://github.com/transparencies/sycamore",
   "entries": {
     "Benchmark": [
       {
@@ -9731,6 +9731,78 @@ window.BENCHMARK_DATA = {
             "name": "ssr_medium",
             "value": 70513,
             "range": "± 938",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "37006668+lukechu10@users.noreply.github.com",
+            "name": "Luke",
+            "username": "lukechu10"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "11613939a534312a293c216f856af567b7d67152",
+          "message": "Improve generation of HTML for the hydrate example. (#657)\n\nFix hydrate example rendered HTML\r\n\r\nThis changes the hydrate app to render the HTML when using `cargo run` so that we no longer need to manually update the HTML.",
+          "timestamp": "2024-02-01T16:52:59Z",
+          "tree_id": "758a93f89060afbc54bf48ec4866e24702c52c2b",
+          "url": "https://github.com/transparencies/sycamore/commit/11613939a534312a293c216f856af567b7d67152"
+        },
+        "date": 1709601502990,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "reactivity_signals",
+            "value": 33414,
+            "range": "± 1249",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "reactivity_effects",
+            "value": 110307,
+            "range": "± 2386",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "reactivity_map_indexed",
+            "value": 12863,
+            "range": "± 1382",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "reactivity_map_keyed",
+            "value": 19365,
+            "range": "± 30658",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "reactivity_context_deeply_nested",
+            "value": 1204,
+            "range": "± 292",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "deep_creation",
+            "value": 215111,
+            "range": "± 55386",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ssr_small",
+            "value": 702,
+            "range": "± 40",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ssr_medium",
+            "value": 23719,
+            "range": "± 118",
             "unit": "ns/iter"
           }
         ]
