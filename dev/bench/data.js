@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1709922333349,
+  "lastUpdate": 1710755655832,
   "repoUrl": "https://github.com/transparencies/sycamore",
   "entries": {
     "Benchmark": [
@@ -9875,6 +9875,78 @@ window.BENCHMARK_DATA = {
             "name": "ssr_medium",
             "value": 23995,
             "range": "± 66",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "37006668+lukechu10@users.noreply.github.com",
+            "name": "Luke",
+            "username": "lukechu10"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "cddfe95e08e27b2c0bc134b837d799d0c5e087a8",
+          "message": "Update trunk to v0.19.1 and disable minification for hydrate example (#665)",
+          "timestamp": "2024-03-17T17:31:09-07:00",
+          "tree_id": "dea9e417a01d28419c7f69f559eb0aed93e2cfca",
+          "url": "https://github.com/transparencies/sycamore/commit/cddfe95e08e27b2c0bc134b837d799d0c5e087a8"
+        },
+        "date": 1710755654699,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "reactivity_signals",
+            "value": 33272,
+            "range": "± 623",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "reactivity_effects",
+            "value": 110233,
+            "range": "± 633",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "reactivity_map_indexed",
+            "value": 12665,
+            "range": "± 39737",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "reactivity_map_keyed",
+            "value": 19221,
+            "range": "± 30310",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "reactivity_context_deeply_nested",
+            "value": 1079,
+            "range": "± 228",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "deep_creation",
+            "value": 210796,
+            "range": "± 106962",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ssr_small",
+            "value": 708,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ssr_medium",
+            "value": 24272,
+            "range": "± 138",
             "unit": "ns/iter"
           }
         ]
