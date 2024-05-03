@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1710755655832,
+  "lastUpdate": 1714744961621,
   "repoUrl": "https://github.com/transparencies/sycamore",
   "entries": {
     "Benchmark": [
@@ -9947,6 +9947,78 @@ window.BENCHMARK_DATA = {
             "name": "ssr_medium",
             "value": 24272,
             "range": "± 138",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "109115028+dyanechi@users.noreply.github.com",
+            "name": "Dawid Janeczko",
+            "username": "dyanechi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "86f0b057fae722c4100629ba0931f8ce7d208c6b",
+          "message": "Fix: re-export `SubmitEvent` from `sycamore-web` (#668)\n\nAllows to use SubmitEvent in closures to avoid errors when submitting form with `on:submit`.",
+          "timestamp": "2024-04-02T21:39:58-07:00",
+          "tree_id": "90550cd0d0ff15726a65778c19d8da84fa789eba",
+          "url": "https://github.com/transparencies/sycamore/commit/86f0b057fae722c4100629ba0931f8ce7d208c6b"
+        },
+        "date": 1714744960573,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "reactivity_signals",
+            "value": 33105,
+            "range": "± 1093",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "reactivity_effects",
+            "value": 107800,
+            "range": "± 5193",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "reactivity_map_indexed",
+            "value": 13303,
+            "range": "± 739",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "reactivity_map_keyed",
+            "value": 20774,
+            "range": "± 33649",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "reactivity_context_deeply_nested",
+            "value": 1038,
+            "range": "± 223",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "deep_creation",
+            "value": 214808,
+            "range": "± 72877",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ssr_small",
+            "value": 688,
+            "range": "± 21",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ssr_medium",
+            "value": 23682,
+            "range": "± 246",
             "unit": "ns/iter"
           }
         ]
