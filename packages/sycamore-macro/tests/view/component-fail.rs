@@ -6,46 +6,46 @@ pub struct Props {
 }
 
 #[component]
-pub fn PropsComponent<G: Html>(Props { prop: _ }: Props) -> View<G> {
+pub fn PropsComponent(Props { prop: _ }: Props) -> View {
     view! {
         div {}
     }
 }
 
 #[component]
-fn Component<G: Html>() -> View<G> {
+fn Component() -> View {
     view! {
         div {}
     }
 }
 
 #[derive(Props)]
-pub struct AttributesProps<G: Html> {
-    attributes: Attributes<G>,
+pub struct AttributesProps {
+    #[prop(attributes(html, div))]
+    attributes: Attributes,
 }
 
 #[component]
-pub fn AttributesComponent<G: Html>(
-    AttributesProps { attributes: _ }: AttributesProps<G>,
-) -> View<G> {
+pub fn AttributesComponent(AttributesProps { attributes }: AttributesProps) -> View {
     view! {
-        div {}
+        div(..attributes)
     }
 }
 
-fn compile_fail<G: Html>() {
+fn compile_fail() {
     let _ = create_root(|| {
-        let _: View<G> = view! { UnknownComponent() };
-        let _: View<G> = view! { UnknownComponent {} };
+        let _: View = view! { UnknownComponent() };
+        let _: View = view! { UnknownComponent {} };
 
-        let _: View<G> = view! { Component };
-        let _: View<G> = view! { Component(prop=1) };
+        let _: View = view! { Component };
+        let _: View = view! { Component(not_a_prop=1) };
 
-        let _: View<G> = view! { PropsComponent() };
-        let _: View<G> = view! { PropsComponent {} };
-        let _: View<G> = view! { PropsComponent(prop=123) };
-        let _: View<G> = view! { PropsComponent { prop: "123" } }; // Legacy syntax.
-        let _: View<G> = view! { AttributesComponent(attr:class=123) }; // Wrong type
+        let _: View = view! { PropsComponent() };
+        let _: View = view! { PropsComponent {} };
+        let _: View = view! { PropsComponent(prop=123) };
+        let _: View = view! { PropsComponent { prop: "123" } }; // Legacy syntax.
+
+        let _: View = view! { AttributesComponent(class=123) }; // Wrong type
     });
 }
 

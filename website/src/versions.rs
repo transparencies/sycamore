@@ -10,6 +10,8 @@ enum VersionedDocsLink {
 const VERSIONS: &[(&str, VersionedDocsLink)] = &[
     ("Next", VersionedDocsLink::Next),
     // v0.9.x
+    ("v0.9.0-beta.4", VersionedDocsLink::None),
+    ("v0.9.0-beta.3", VersionedDocsLink::None),
     ("v0.9.0-beta.2", VersionedDocsLink::None),
     ("v0.9.0-beta.1", VersionedDocsLink::None),
     // v0.8.x
@@ -40,10 +42,7 @@ const VERSIONS: &[(&str, VersionedDocsLink)] = &[
 ];
 
 #[component(inline_props)]
-fn VersionedDocsLink<G: Html>(
-    name: &'static str,
-    versioned_docs_link: VersionedDocsLink,
-) -> View<G> {
+fn VersionedDocsLink(name: &'static str, versioned_docs_link: VersionedDocsLink) -> View {
     match versioned_docs_link {
         VersionedDocsLink::Some(link) => view! {
             a(
@@ -84,14 +83,10 @@ fn VersionedDocsLink<G: Html>(
 }
 
 #[component]
-pub fn Versions<G: Html>() -> View<G> {
-    web_sys::window()
-        .unwrap()
-        .document()
-        .unwrap()
-        .set_title("Versions - Sycamore");
+pub fn Versions() -> View {
+    document().set_title("Versions - Sycamore");
 
-    let versions = VERSIONS
+    let versions: View = VERSIONS
         .iter()
         .copied()
         .map(|(name, versioned_docs_link)| {
@@ -104,8 +99,7 @@ pub fn Versions<G: Html>() -> View<G> {
                 }
             }
         })
-        .collect();
-    let versions = View::new_fragment(versions);
+        .collect::<Vec<_>>().into();
 
     view! {
         div(class="container mx-auto") {

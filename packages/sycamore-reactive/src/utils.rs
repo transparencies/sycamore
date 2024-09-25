@@ -4,9 +4,6 @@ use crate::*;
 
 /// A trait that is implemented for reactive data that can be accessed and tracked, such as
 /// [`Signal`].
-///
-/// You can make your components/functions take this instead of a concrete reactive type so that it
-/// can work with any reactive type.
 pub trait Accessor<T> {
     /// Get the reactive value. For example, with [`Signal`], this just calls
     /// [`get`](ReadSignal::get).
@@ -102,7 +99,7 @@ impl_trackable_deps_for_tuple!(A, B, C, D, E, F, G, H, I, J, K, L);
 ///
 /// # Params
 /// * `deps` - A list of signals/memos that are tracked. This can be a single signal or it can be a
-/// tuple of signals.
+///   tuple of signals.
 /// * `f` - The callback function.
 ///
 /// # Example
